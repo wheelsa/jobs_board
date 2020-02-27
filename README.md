@@ -1,4 +1,4 @@
-# README
+# README - Jobs Board (Built on Rails)
 
 This README explains my intent while developing my web project "Jobs Board"
 
