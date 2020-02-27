@@ -1,0 +1,21 @@
+<%= form_with(model: @jobPosting, local: true, class: "ui form") do |f|%>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, required: true, placeholder: "Job Title"%>
+  </div>
+  <div class="field">
+    <%= f.label :company %>
+    <%= f.text_field :company, required: true, placeholder: "Company Name"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :requirements %>
+    <%= f.text_field :requirements, required: true, placeholder: "Requirements?"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :job_description %>
+    <%= f.text_area :job_description, required: true, placeholder: "Job Description?"%>
+  </div>
+<%= f.submit nil, class: "waves-effect waves-light btn"%>
+<% end %>

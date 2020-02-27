@@ -1,18 +1,18 @@
 class JobPostingsController < ApplicationController
-  before_class :set_job_posting, only: [:show, :edit, :update, :destroy]
+  before_action :set_jobPosting, only: [:show, :edit, :update, :destroy]
 
   def index
-    @job_postings = Job_posting.all
+    @jobPostings = JobPosting.all
   end
 
   def new
-    @job_posting = Job_posting.new
+    @jobPosting = JobPosting.new
   end
 
   def create
-    @job_posting = Job_posting.new(job_posting_params)
+    @jobPosting = JobPosting.new(jobPosting_params)
 
-    if @job_posting.save
+    if @jobPosting.save
       redirect_to job_postings_path
     else
       render :new
@@ -29,7 +29,7 @@ class JobPostingsController < ApplicationController
 
   def update
 
-    if @job_posting.update(job_posting_params)
+    if @jobPosting.update(jobPosting_params)
       redirect_to job_postings_path
     else
       render :edit
@@ -37,16 +37,16 @@ class JobPostingsController < ApplicationController
   end
 
   def destroy
-    @job_posting.destroy
+    @jobPosting.destroy
     redirect_to job_postings_path
   end
 
   private
-    def set_job_posting
-      @job_posting = Job_posting.find(params(:id))
+    def set_jobPosting
+      @jobPosting = JobPosting.find(params[:id])
     end 
     
-    def job_posting_params
+    def jobPosting_params
       params.require(:job_posting).permit(:title, :company,:requirements, :job_description)
     end 
 

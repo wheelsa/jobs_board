@@ -1,2 +1,22 @@
-<h1>JobPostings#index</h1>
-<p>Find me in app/views/job_postings/index.html.erb</p>
+<h1>Job Posting Directory</h1>
+<%= link_to "Add Job Posting", new_job_posting_path%>
+<hr />
+ <h2><%= @jobPostings.length <= 0 ? "No Candidates" : "" %> </h2>
+<ul>
+  <% @jobPostings.each do |job|%>
+    <li>
+      <h3><%= link_to job.title, job_posting_path(job)%> </h3>
+    </li>
+    <li>
+      <p><%= job.company%> </p>
+    </li>
+    <li>
+      <p><%= job.requirements%> </p>
+    </li>
+     <li>
+      <p><%= job.job_description%> </p>
+    </li>
+  <%end%>
+  
+
+</ul>

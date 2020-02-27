@@ -1,2 +1,16 @@
-<h1>JobPostings#show</h1>
-<p>Find me in app/views/job_postings/show.html.erb</p>
+<h1><%=@jobPosting.title%>'s applied candidates </h1>
+<hr />
+
+<ul> 
+  <%@jobPosting.candidates.each do |candidate|%>
+    <li>
+      <h3><%= link_to "#{candidate.name}", candidate_path(candidate)%> </h3>
+    </li>
+  <%end%>
+</ul>
+
+<br />
+<br />
+<br />
+
+<%= link_to "Delete Job Posting", @job_posting, method: :delete, class: "ui red button inverted"%>
