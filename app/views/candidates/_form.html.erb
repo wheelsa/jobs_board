@@ -1,0 +1,22 @@
+<%= form_with(model: @candidate, local: true, class: "ui form") do |f|%>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true, placeholder: "Candidates's Name"%>
+  </div>
+  <div class="field">
+    <%= f.label :location %>
+    <%= f.text_field :location, required: true, placeholder: "Where do you currently live?"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_occupation %>
+    <%= f.text_field :current_occupation, required: true, placeholder: "Whats your current occupation?"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :years_experience %>
+    <%= f.text_field :years_experience, required: true, placeholder: "Where do you currently live?"%>
+  </div>
+<%= f.submit nil, class: "waves-effect waves-light btn"%>
+<% end %>
+

@@ -1,0 +1,2 @@
+module JobBoardMetrosHelper
+end

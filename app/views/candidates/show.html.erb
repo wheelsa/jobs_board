@@ -1,0 +1,12 @@
+<h1><%="Candidate #{@candidate.name}"%></h1>
+<hr />
+<br />
+
+<%= link_to "Job_boards", candidate_job_board_metros_path(@candidate), class: "ui primary button inverted"%>
+
+<br />
+<br />
+<br />
+
+<%= link_to "Delete Candidate", @candidate, method: :delete, class: "ui red button inverted"%>
+

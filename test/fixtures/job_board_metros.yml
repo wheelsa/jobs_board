@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  metro_area: MyString
+  candidate: one
+  job_posting: one
+
+two:
+  metro_area: MyString
+  candidate: two
+  job_posting: two

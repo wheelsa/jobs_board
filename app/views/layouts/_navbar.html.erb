@@ -1,0 +1,30 @@
+  <nav class="purple">
+    <div class="nav-wrapper">
+        <%= link_to 'Home', root_path, class:"brand-logo"%>
+
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <% if user_signed_in?%>
+          <li>
+            <%= link_to "Candidates", candidates_path%>
+          </li>
+          <li>
+            <%= link_to "Job Postings", job_postings_path%>
+          </li>
+          <li>
+             <%= link_to "Job Boards", candidate_job_board_metros_path(1)%>
+          </li>
+          <li>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete%>
+          </li>
+        <%else%>
+          <li>
+          <%= link_to 'Login', new_user_session_path %>
+          </li>
+          <li>
+          <%= link_to 'Sign Up', new_user_registration_path%>
+          </li>
+      
+        <%end%>
+      </ul>
+    </div>
+  </nav>
