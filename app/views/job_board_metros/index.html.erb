@@ -1,2 +1,49 @@
-<h1>JobBoardMetros#index</h1>
-<p>Find me in app/views/job_board_metros/index.html.erb</p>
+<h1><%= "#{@candidate.name}'s Open Job Apps" %></h1>
+
+<%= link_to 'Add Job Metro Board', new_candidate_job_board_metro_path(@candidate)%>
+<hr />
+
+<h2> Salt Lake City </h2>
+<ul>
+  <% @slc.each do |slc|%>
+    <li>
+      <%= slc.jobPosting.title%>
+      <br />
+     <%= link_to 'Remove', candidate_job_board_metro_path(@candidate, slc), method: :delete %>
+    </li>
+  <%end%>
+  </ul>
+ <h2> Seattle </h2>
+<ul>
+  <% @seattle.each do |seattle|%>
+    <li>
+      <%= seattle.job_posting.title%>
+      <br />
+    <%= link_to 'Remove', candidate_job_board_metro_path(@candidate, seattle), method: :delete %>
+    </li>
+  <%end%>
+  </ul>
+
+
+ <h2> Austin </h2>
+<ul>
+  <% @austin.each do |austin|%>
+    <li>
+      <%= austin.jobPosting.title%>
+      <br />
+    <%= link_to 'Remove', candidate_job_board_metro_path(@candidate, austin), method: :delete %>
+    </li>
+  <%end%>
+  </ul>
+
+
+<h2> SF </h2>
+<ul>
+  <% @sf.each do |sf|%>
+    <li>
+      <%= sf.jobPosting.title%>
+      <br />
+    <%= link_to 'Remove', candidate_job_board_metro_path(@candidate, sf), method: :delete %>
+    </li>
+  <%end%>
+  </ul>
